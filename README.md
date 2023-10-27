@@ -23,3 +23,31 @@ Today I have learned:
 - Escaping literal quotes in a string by placing a backslash in front of the quote and escape sequence.
 - Concatenation operator
 - Using bracket notation to get a character at a specific index in a string.
+
+# Day 2
+
+![day-two-image](./images/dayTwo.png)
+
+Today I have learned:
+
+- Use bracket notation to get the value at a specific index in a string (`[]`) or entries in an array.
+- The last letter of a string `const firstName = "Ada"` is `const lastLetter = firstName[firstName.length - 1]`, and the same principle applies for the nth last elements.
+- Store multiple values in a variable called an Array.
+- Multi-dimensional array is arrays nested in arrays.
+- Using bracket notation to change the entry value of an array.
+- Append data to the end of an array using `push()` method and `pop()` doing the opposite.
+- `shift()` is used to remove the first element in the array and `unshift` is to remove the first element.
+- Function is the reusable blocks of code that we divide our code used by invoking or being called with a function name followed by parentheses.
+- Parameters are placeholders that are to be put into a function when it is called or invoked, and the actual values that are passed (put into) the parameters are called arguments.
+- Return a value from a function with a return statement.
+- Scope refers to the variable's visibility, which is where they can be seen and accessed in the code.
+- Global scope vs local scope, and they could have the same name declaration.
+- A function without a return statement would return an undefined value.
+- A return value from a function can be stored in a variable.
+- Queue data structure is when new items are added at the back of the queue and old items are taken off in front of the queue.
+- Boolean data type.
+- `if` statement is used to make decisions in code.
+- Equality operator (`==`) which returns true OR false under certain circumstances with auto type conversion, is different from the assignment operator (`=`) as well as to compare with strict equality (`===`) with no auto type comparison and same with `!=` and `!==` in terms of auto data type conversion when comparing.
+- `typeof` operator determines the data type of a variable.
+- Greater than (`>`), greater than or equal (`>=`), less than (`<`), less than or equal (`<=`) operator has auto data type conversion.
+- The logical and operator (`&&`) returns true if and only if the operands to the left and right of it are true.
