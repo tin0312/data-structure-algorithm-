@@ -51,3 +51,24 @@ Today I have learned:
 - `typeof` operator determines the data type of a variable.
 - Greater than (`>`), greater than or equal (`>=`), less than (`<`), less than or equal (`<=`) operator has auto data type conversion.
 - The logical and operator (`&&`) returns true if and only if the operands to the left and right of it are true.
+
+
+# Day 3
+
+![day-three-image](./images/dayThree.jpg)
+
+Today I have learned:
+
+- The (`||`) return true if either of the operands is true, otherwise it return false.
+- `else` statement will be executed as an alternate block when if statement condition is false.
+- Chain multiple `if` statement with `else if`.
+- Logical order in `if else` statement is important since the function will be executed from the top.
+- A `switch` statement compares values to `case` statements which define various possible value and `case` statement are tested with `(===)` and `default` statement as the last one in case no matching was found.
+- Cases in `switch` statement can be combined when the have the same output.
+- Short way to compare `(a === b)` without a `if` statement because the equality operator always return true or false.
+- when the `return` statement is reached, the execution of a function stops and controls the return to the calling location.
+- Javascript objects and access object data by using properties, numbers or strings can be used as properties.The number value properties will be typecasted as a string type.
+- There are two way to access object property, by using `.` or `([])` which are called `Dot Notation` or `Bracket Notation`.
+- Access the value of a propertiy in object by assign that property name to a variable and use it with object varible along with bracket notation.
+- Adding a property in Javascript object has the same approach as accessing them and for deletion using `delete` keyword followed by the property value access.
+- Using object as a key-value storage for tabular data instead of using `switch` or `if else` statement.
