@@ -72,3 +72,18 @@ Today I have learned:
 - Access the value of a propertiy in object by assign that property name to a variable and use it with object varible along with bracket notation.
 - Adding a property in Javascript object has the same approach as accessing them and for deletion using `delete` keyword followed by the property value access.
 - Using object as a key-value storage for tabular data instead of using `switch` or `if else` statement.
+
+# Day 4
+
+![day-four-image](./images/dayFour.jpg)
+
+Today I have learned:
+
+- Check if a property exist in an object with `.hasOwnProperty()` method which will return `true` or `false` depend on if the property exists in the object.
+- Javascript object can be used to store flexiable and complicated data structure including the arbitrary combination of strings, numbers, booleans, arrays, functions, and objects.
+- Accessing the sub-properties of an object, nested arrays by using the combination of dot and bracket notation.
+- The `While` loop run until the specific condition is no longer valid.
+- The `For` loop run the code specific multiple of times.
+- The `do...while` loop makes sure the code in the loop gets executed at least one.
+- Recursive function `(function multiplyAll(arr,n) == function multiplyAll(arr, n-1) * arr[n-1])` as an example intead of using `for` loop  to calculate the multiplication for the first n elements in the array.
+- The recursive function must have base case when they return to stop executing.
