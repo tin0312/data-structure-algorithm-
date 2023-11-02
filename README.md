@@ -87,3 +87,53 @@ Today I have learned:
 - The `do...while` loop makes sure the code in the loop gets executed at least one.
 - Recursive function `(function multiplyAll(arr,n) == function multiplyAll(arr, n-1) * arr[n-1])` as an example intead of using `for` loop  to calculate the multiplication for the first n elements in the array.
 - The recursive function must have base case when they return to stop executing.
+
+
+# Day 5
+
+![day-five-image](./images/dayFive.jpg)
+
+Today I have learned:
+
+- `Math.random()` generate random decimal numbers from 0 (inclusive) and 1 (exclusive).
+- All function calls will be resolved before the `return` statement.
+- How to generate a random number using `Math.random()`
+ + Use Math.random() to generate random numbers
+ + Multiply by range (example: by 20 will generate 20 numbers)
+ + Use `Math.floor()` to round the decimal number to the nearest float point.
+ + The `Math.random()` method will never return a number 1 so it will never get to 20.
+- How to generate a random number in a given range using `Math.random()`
+  + `(Math.floor(Math.random() * (max - min + 1)) + min` will generate a random number that is greater than or equal to min and less than or equal to max.
+- Using `parseInt()` method to convert a string to a number. If the first character of a string cannot be converted into a number it returns `NaN`.
+- Using `parseInt()` method to convert a binary number to an integer with the second parameter called `radix` which represent the base of the number. `(example: parseInt('11', 2) return 3)`
+- Using ternary (conditional) operator as an alternative method to `if...else` statement(example `(return a === b ? "Equal" : "Not Equal")`).
+- Best practise to separate multiple conditional statement into lines in ternary operator.
+- Use recursive function to backtrack constructing an array from 1 to the n parameter in 
+
+  ```javascript
+  function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+
+
+- This is an alternative way for using `for` loop, using `unshift()` method to do the other way around.
+
+- Using recursive to backtrack constructing an array with a given range
+
+  ```javascript
+  function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return []
+  } else {
+      const arr = rangeOfNumbers(startNum, endNum - 1)
+      arr.push(endNum);
+      return arr
+  }
+}
+```
