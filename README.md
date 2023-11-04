@@ -136,4 +136,19 @@ Today I have learned:
       return arr
   }
 }
-```
+
+# Day 6
+
+![day-six-image](./images/daySix.jpg)
+
+Today I have learned:
+
+- ES6 or ECMAScript is the standardized version of Javascript.
+- `let` keyword in ES6 can also be used only locally in a scope.
+-  Objects or arrays assigned with a `const` keyword are immutable which means, the whole unit itself cannot be changed but its element can.
+- Use `Object.freeze` to avoid data from mutation.
+- Use arrow function to write concise anonymous function, that is when an function is passed as an argument of another function and will not be reused.
+- Arrow functions that do not have a body or only return value can omit `return` keyword and the brackets surrounding.
+- If the arrow function only has one parameter, the parentheses enclosing the parameter.
+- ES6 introduced default parameters to the function, the default value will be used when no argument is passed into the function.
+- Using rest parameter for function parameters. 
