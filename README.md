@@ -152,3 +152,40 @@ Today I have learned:
 - If the arrow function only has one parameter, the parentheses enclosing the parameter.
 - ES6 introduced default parameters to the function, the default value will be used when no argument is passed into the function.
 - Using rest parameter for function parameters. 
+
+# Day 7
+
+![day-seven-image](./images/daySeven.jpg)
+
+Today I have learned:
+
+- Spread operator allow us to expand an array and other expressions where multiple elements or parameters are expected.
+- Spread operator only works in-place like when in array literal or an argument to a function (example use case to copy an array).
+- Destructuring assignment is a new feature introduced in ES6.
+- Assign a new variable names when extract values using destructuring by adding column followed by a desired name in an object.
+- Destructuring and change variales names from the nested objects.
+- Destructuring an array and the use of comma to reach to the desired index.
+- Using rest parameter with array destructuring 
+
+  ```javascript const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; 
+-  Cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+- Use rest element to emulate the behavior of `array.prototype.splice()`, the function below return a sub-array of the original array that omit the first 2 elements.
+
+```javascript
+
+function removeFirstTwo(list) {
+  const [,, ...shortList] = list
+  return shortList;
+}
+```
+
+- Use destructuring assignment to pass an object as a function's argument. This effectively destructure the object that sent to the function.
+
+```javascript
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+
+}
+
+const profileUpdate = ({name, age, nationality, location}) => {}
+```
