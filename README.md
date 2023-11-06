@@ -148,7 +148,7 @@ Today I have learned:
 -  Objects or arrays assigned with a `const` keyword are immutable which means, the whole unit itself cannot be changed but its element can.
 - Use `Object.freeze` to avoid data from mutation.
 - Use arrow function to write concise anonymous function, that is when an function is passed as an argument of another function and will not be reused.
-- Arrow functions that do not have a body or only return value can omit `return` keyword and the brackets surrounding.
+- Arrow functions that do not have a body or only return a value can omit `return` keyword and the brackets surrounding.
 - If the arrow function only has one parameter, the parentheses enclosing the parameter.
 - ES6 introduced default parameters to the function, the default value will be used when no argument is passed into the function.
 - Using rest parameter for function parameters. 
@@ -189,3 +189,25 @@ const profileUpdate = (profileData) => {
 
 const profileUpdate = ({name, age, nationality, location}) => {}
 ```
+
+![day-seven-image](./images/dayEight.jpg)
+
+Today I have learned: 
+
+- Tempalate literal enables us to create multi-line string or to use string interpolution to create string by using backticks.
+- Using object property short-hand to write concise Object literal declaration.
+
+```javascript 
+
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+
+`and`
+
+const getMousePosition = (x, y) => ({ x, y });
+
+```
+
+- When declaring a function for a property in an object, remove the function keyword and colon together.
