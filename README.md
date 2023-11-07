@@ -19,7 +19,7 @@ Today I have learned:
 - Decimal numbers are the ones that have float points or called float.
 - The remainder operator %, the difference between the modulus operator is that it does not work with negative numbers.
 - Everything on the right side of the assignment will be evaluated first.
-- Operators such as +=; -=; *=; /=
+- Operators such as +=; -=; \*=; /=
 - Escaping literal quotes in a string by placing a backslash in front of the quote and escape sequence.
 - Concatenation operator
 - Using bracket notation to get a character at a specific index in a string.
@@ -51,7 +51,6 @@ Today I have learned:
 - `typeof` operator determines the data type of a variable.
 - Greater than (`>`), greater than or equal (`>=`), less than (`<`), less than or equal (`<=`) operator has auto data type conversion.
 - The logical and operator (`&&`) returns true if and only if the operands to the left and right of it are true.
-
 
 # Day 3
 
@@ -85,9 +84,8 @@ Today I have learned:
 - The `While` loop run until the specific condition is no longer valid.
 - The `For` loop run the code specific multiple of times.
 - The `do...while` loop makes sure the code in the loop gets executed at least one.
-- Recursive function `(function multiplyAll(arr,n) == function multiplyAll(arr, n-1) * arr[n-1])` as an example intead of using `for` loop  to calculate the multiplication for the first n elements in the array.
+- Recursive function `(function multiplyAll(arr,n) == function multiplyAll(arr, n-1) * arr[n-1])` as an example intead of using `for` loop to calculate the multiplication for the first n elements in the array.
 - The recursive function must have base case when they return to stop executing.
-
 
 # Day 5
 
@@ -98,29 +96,31 @@ Today I have learned:
 - `Math.random()` generate random decimal numbers from 0 (inclusive) and 1 (exclusive).
 - All function calls will be resolved before the `return` statement.
 - How to generate a random number using `Math.random()`
- + Use Math.random() to generate random numbers
- + Multiply by range (example: by 20 will generate 20 numbers)
- + Use `Math.floor()` to round the decimal number to the nearest float point.
- + The `Math.random()` method will never return a number 1 so it will never get to 20.
+
+* Use Math.random() to generate random numbers
+* Multiply by range (example: by 20 will generate 20 numbers)
+* Use `Math.floor()` to round the decimal number to the nearest float point.
+* The `Math.random()` method will never return a number 1 so it will never get to 20.
+
 - How to generate a random number in a given range using `Math.random()`
-  + `(Math.floor(Math.random() * (max - min + 1)) + min` will generate a random number that is greater than or equal to min and less than or equal to max.
+  - `(Math.floor(Math.random() * (max - min + 1)) + min` will generate a random number that is greater than or equal to min and less than or equal to max.
 - Using `parseInt()` method to convert a string to a number. If the first character of a string cannot be converted into a number it returns `NaN`.
 - Using `parseInt()` method to convert a binary number to an integer with the second parameter called `radix` which represent the base of the number. `(example: parseInt('11', 2) return 3)`
 - Using ternary (conditional) operator as an alternative method to `if...else` statement(example `(return a === b ? "Equal" : "Not Equal")`).
 - Best practise to separate multiple conditional statement into lines in ternary operator.
-- Use recursive function to backtrack constructing an array from 1 to the n parameter in 
+- Use recursive function to backtrack constructing an array from 1 to the n parameter in
 
   ```javascript
   function countup(n) {
-  if (n < 1) {
-    return [];
-  } else {
-    const countArray = countup(n - 1);
-    countArray.push(n);
-    return countArray;
+    if (n < 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.push(n);
+      return countArray;
+    }
   }
-}
-
+  ```
 
 - This is an alternative way for using `for` loop, using `unshift()` method to do the other way around.
 
@@ -128,14 +128,15 @@ Today I have learned:
 
   ```javascript
   function rangeOfNumbers(startNum, endNum) {
-  if (endNum < startNum) {
-    return []
-  } else {
-      const arr = rangeOfNumbers(startNum, endNum - 1)
+    if (endNum < startNum) {
+      return [];
+    } else {
+      const arr = rangeOfNumbers(startNum, endNum - 1);
       arr.push(endNum);
-      return arr
+      return arr;
+    }
   }
-}
+  ```
 
 # Day 6
 
@@ -145,13 +146,13 @@ Today I have learned:
 
 - ES6 or ECMAScript is the standardized version of Javascript.
 - `let` keyword in ES6 can also be used only locally in a scope.
--  Objects or arrays assigned with a `const` keyword are immutable which means, the whole unit itself cannot be changed but its element can.
+- Objects or arrays assigned with a `const` keyword are immutable which means, the whole unit itself cannot be changed but its element can.
 - Use `Object.freeze` to avoid data from mutation.
 - Use arrow function to write concise anonymous function, that is when an function is passed as an argument of another function and will not be reused.
 - Arrow functions that do not have a body or only return a value can omit `return` keyword and the brackets surrounding.
 - If the arrow function only has one parameter, the parentheses enclosing the parameter.
 - ES6 introduced default parameters to the function, the default value will be used when no argument is passed into the function.
-- Using rest parameter for function parameters. 
+- Using rest parameter for function parameters.
 
 # Day 7
 
@@ -165,16 +166,18 @@ Today I have learned:
 - Assign a new variable names when extract values using destructuring by adding column followed by a desired name in an object.
 - Destructuring and change variales names from the nested objects.
 - Destructuring an array and the use of comma to reach to the desired index.
-- Using rest parameter with array destructuring 
+- Using rest parameter with array destructuring
 
-  ```javascript const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; 
--  Cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
+  ```javascript const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+
+  ```
+
+- Cannot use the rest syntax to catch a subarray that leaves out the last element of the original array.
 - Use rest element to emulate the behavior of `array.prototype.splice()`, the function below return a sub-array of the original array that omit the first 2 elements.
 
 ```javascript
-
 function removeFirstTwo(list) {
-  const [,, ...shortList] = list
+  const [, , ...shortList] = list;
   return shortList;
 }
 ```
@@ -184,30 +187,78 @@ function removeFirstTwo(list) {
 ```javascript
 const profileUpdate = (profileData) => {
   const { name, age, nationality, location } = profileData;
+};
 
-}
-
-const profileUpdate = ({name, age, nationality, location}) => {}
+const profileUpdate = ({ name, age, nationality, location }) => {};
 ```
+
+# Day 8
 
 ![day-seven-image](./images/dayEight.jpg)
 
-Today I have learned: 
+Today I have learned:
 
 - Tempalate literal enables us to create multi-line string or to use string interpolution to create string by using backticks.
 - Using object property short-hand to write concise Object literal declaration.
 
-```javascript 
-
+```javascript
 const getMousePosition = (x, y) => ({
   x: x,
-  y: y
+  y: y,
 });
 
-`and`
+`and`;
 
 const getMousePosition = (x, y) => ({ x, y });
-
 ```
 
 - When declaring a function for a property in an object, remove the function keyword and colon together.
+
+# Day 9
+
+![day-nine-image](./images/dayNine.jpeg)
+
+Today I have learned:
+
+- In ES6, a `class` declaration has a `constructor` method that is invoked using `this` keyword (explicitly) and if there is no `constructor` method is being defined then it takes no arguments.
+- The constructor is invoked when there is a `new` keyword to create a new object.
+- Uppercamel case is used to as naming convention for ES6 class name.
+- The `constructor` is a special method to create and initilize object created with class.
+
+```javascript
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+```
+
+- Use getters and setters method to control the property of an object.
+- Getter functions is used to get the value of the object's private values without having users accessing the private value of the variables.
+- Setter functions is used to modify, override, calculate the value of the object private variables.
+
+```javascript
+class Thermostat {
+  constructor(F) {
+    this.F = F;
+  }
+  // get the temp in C
+  get temperature() {
+    return (5 / 9) * (this.F - 32);
+  }
+  set temperature(C) {
+    return (this.F = (C * 9.0) / 5 + 32);
+  }
+}
+```
+
+- Create a `module` script to use ES6 features of `import` and `export`.
+- There are 2 ways to export functions to share with other javascript file: one is use the `export` keyword directly in the function itself or use it in the export statement `(export {})`and the same approach to `import`.
+- Use `import * as someThing from ""` to import all contents of a file to be used in another file and access them as properties of that alias of all content just created.
+- Using `export default` to create a default fallback value for a module or a file and there is import statement `{}` for `export` default.
+- Javascript promise using asynchronous function. A promise is a constructor function which is used by `new` keyword to create one.
+- The Promise takes a function as an argument and 2 parametes of resolve and reject which are used to determine the outcome of the promise.
+
+```javascript
+const makeSeverRequest = new Promise((resolve, reject) => {});
+```
