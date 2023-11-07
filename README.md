@@ -262,3 +262,22 @@ class Thermostat {
 ```javascript
 const makeSeverRequest = new Promise((resolve, reject) => {});
 ```
+
+# Day 10
+
+![day-ten-image](./images/dayTen.jpeg)
+
+Today I have learned:
+
+- The `resolve` parameter is used to do something when the promise is a success and the other way aroud with the `reject` paraneter.If there is not parameter is used, the promise stuck in pending forever.
+- The `promise` parameters take arguments to to process the data receieved.
+- Use `then()` method is to handle fulfilled promise, executed immediately right after the promise is fulfilled with `resolve`.
+- Use `catch()` method is used to handle the `reject` and the parameter of the inside callback function is passed to `reject` method.
+- Regular express or `regex` is used to match parts of strings.
+- Using `test()` method to determine the match in which it returns whether `true` or `false`.
+- Regrex uses (/text/) to create a single expression to search the literal match in a string and use `alternation` `OR` operator `|`. example (`/textOne|textTwo|textThree`).
+- Using flag `i` at the end of the regrex expression which is to ignore the case of the string.
+- Use `match()` method with the regrex in parenthesis and apply it to a string to return the literal match aka extract it.
+- The `g` flag helps to return the literal match more than once.
+- Use `.` wildcard character to match any one letters.
+- Use `[]` character class to combine both specifical match (`/text/`) and (`/text/.`) which is (`/b[aiu]/g`) that match ALL strings thah has `b` and `g` and targeting only the ones that has `aiu`.
