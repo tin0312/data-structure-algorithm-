@@ -281,3 +281,15 @@ Today I have learned:
 - The `g` flag helps to return the literal match more than once.
 - Use `.` wildcard character to match any one letters.
 - Use `[]` character class to combine both specifical match (`/text/`) and (`/text/.`) which is (`/b[aiu]/g`) that match ALL strings thah has `b` and `g` and targeting only the ones that has `aiu`.
+
+# Day 11
+
+![day-eleven-image](./images/dayEleven.jpg)
+
+Today I have learned:
+
+- Built-in feature in regrex that helps match multiple characters in the strings. Example : to match all literal that has lowercase letters from a - e(`[a-e]`).
+- Using `-` also works with numbers to match with multiple numbers and both numbers and literals like `/[a-z0-9]/ig`.
+- Create negated character set that we do not wanna match by just putting the caret `^` character right after the regrex expression. Example: `/[^a-z]/gi.` and use as many caret characters as needed to exclude the wanted literals.
+- Use character `+` to find the match of a character that is at least one time repeated, if that letter appears consecutively, it will return a single match and multiple matches if they are not consecutive.
+- Use the star `*` character to find the match if a character appears 0 or more times
