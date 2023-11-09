@@ -293,3 +293,43 @@ Today I have learned:
 - Create negated character set that we do not wanna match by just putting the caret `^` character right after the regrex expression. Example: `/[^a-z]/gi.` and use as many caret characters as needed to exclude the wanted literals.
 - Use character `+` to find the match of a character that is at least one time repeated, if that letter appears consecutively, it will return a single match and multiple matches if they are not consecutive.
 - Use the star `*` character to find the match if a character appears 0 or more times
+
+# Day 12
+
+![day-twelve-image](./images/dayTwelve.png)
+
+Today I have learned:
+
+- Greedy matching and lazy matching with examples of `/t[a-z]/*i` to match all patterns that starts with `t` and ends with `i` with characters in between and `/t[a-z]/*?i` is used just to match wherever the literal starts with `t` and ends `i`.
+- Regex can be used to look for a number of matches and can be used to search for patterns in specific positions in a string.
+- The caret `^` besides to exclude certain characters in the literals, it can still be used to search patterns at the beginning of the string. If the match is not at the beginning of a string it returns `false` and `true` otherwise.This character must be placed at the beginning of the regrex.
+- The `$` helps to search the patterns at the end of the string.This regrex character must be placed at the end of the regrex.
+- The closest character `/\w+/` is equivalent to the expression of `/[a-zA-Z0-9_]+/`. Use with `test()` method to return a `boolean` value and with `match()` method to return the numbers of matches example of `/\w/g`.
+- A short character class `/d` is used to match all character digits which is equivalent to the class of `/[0-9]/`. and `/\D/g` for non-digit characters.
+- A guidline to set usernames such as:
+
+* Users can only be alphanumeric characters.
+* The only numbers in username can only be at the end and cannot start with a number.
+* Username can be lowercase and uppercase.
+* Username can be 2 character length and a two-letter username can only use alphabet letters as characters.
+
+```javascript
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+```
+
+- Class expression of `/s` to match with white space including: carriage return, tab, form feed and new line character.And `\S` for non-white space characters.
+- Using quatity specifier `{}` to match with the certain range of patterns. Example `/a{3,5}h/` to match with letter `a` that appears more in the range of (3,5) in the literal `"ah"`.
+- An expression with a question mark `?` means the previous character is optional. `/colou?r/` would match `color` and `colour`.
+- Javascript patterns instruct the program to look ahead in the string to look for patterns along the way.
+- There are 2 types of look-aheads: positive look-ahead will make sure the searched patterns are there but not actually match and the negative look-ahead will make sure the search patterns are not there.
+- Example of a look-ahead that satisfy the passord requirement which contains more than 5 chatacters and at least 2 consecutive digits `/(?=\w{6})(?=\w*\d{2})/`.
+- Check for mixed grouping of characters using `/P(engu|umpk)in/g` which will potentially match `Penguin` and `Pumpkin`.
+- Using `/(/w+)/` to match with capture group of words that repeat multiple times. A captured group of a string will be saved in a temporary variable one-indexed and accessed by `/` or '$' within the capture groups.
+- Using `replace(regex, somethingToReplace)` to search for the match in the first parameter and second parameter is to replace.
+- Using regular expression with `replace()` method to trim the white space at the beginning or at the end of the string
+
+```javascript
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g;
+let result = hello.replace(wsRegex, "");
+```
