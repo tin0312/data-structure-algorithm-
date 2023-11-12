@@ -333,3 +333,24 @@ let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/g;
 let result = hello.replace(wsRegex, "");
 ```
+
+# Day 13
+
+![day-thirtteen-image](./images/dayThirteen.jpg)
+
+Today I have learned:
+
+- The use of devTool in browser such as: Firefox and Chrome with `console.log()` as a debugging tool.
+- It is the good practise to be aware of the value type before cheking what it is and having check points to see the status of calculations throughout the code helps narrow down where the problem is.
+- Use `console.clear()` to clear all the logs from the console.
+- Use `typeof` to check the data type, it is interesting to note that, `[]` is type object.
+- Misspelled variable and function names can make the browser look for a non-existent object and complain in the form of reference error.
+- Opening parentheses, brackets, curly braces, and quotes have a closing pairs is another form of syntax error that Javascript will complain.
+- Take extra care when nesting code blocks or adding a callback function as an argument for a function.
+- Making sure the consistency of using double quote and single quote, a `/` can be used to escape character.
+- `Branch programs` is the one that do different things when certain conditions are met using `if , else if` statements. This process makes sure the program runs on the right branch.
+- Sometimes, the funnction call that takes no argument is saved in the variable for later use.
+- Make sure the passing arguments for a function in a correct order since different data types can result in runtime error and same data type will not make any sense with the logic.
+- Off by one error(OBOE) is when an array or a string is manipulated such as (`slice, accessing a certain index or looping through the indices`).The OBOE indicates the error when accessing the index that is equal to the length of the array or missing indexes when looping through its indices.
+- Use Caution When Reinitializing Variables Inside a Loop, particularly when a variable value needs re-initialization or resetting variable in a loop would cause the infinite loop.
+- There is a dreaded infinite loop that has no terminal condition to break the loop which causes the program mayhem, freeze and crash the browser.
