@@ -354,3 +354,35 @@ Today I have learned:
 - Off by one error(OBOE) is when an array or a string is manipulated such as (`slice, accessing a certain index or looping through the indices`).The OBOE indicates the error when accessing the index that is equal to the length of the array or missing indexes when looping through its indices.
 - Use Caution When Reinitializing Variables Inside a Loop, particularly when a variable value needs re-initialization or resetting variable in a loop would cause the infinite loop.
 - There is a dreaded infinite loop that has no terminal condition to break the loop which causes the program mayhem, freeze and crash the browser.
+
+# Day 14
+
+![day-fourteen-image](/images/dayFourteen.jpg)
+
+Today I have learned:
+
+- One dimensional array that does not have any nested arrays could include valid javascript data types.
+- Multi-dimensial array includes other arrays that can store complex data types such as object.
+- Using bracket notation to access && assign values to the value of array indexes `[]`.
+- Arrays are mutable, `push()` and `unshift()` method add items to the end and the beginning of the array respectively.
+- Method `pop()` and `shift()` function opposite to `push()` anf `unshift()` respectively.
+- Using `splice()` method with the first argument to which item to begin remove and the second argument is the number of items to remove.
+- The third argument in `splice()` method adds one or more elememts to the array after removing certain elements at the removing indexes.
+- The `slice()` method extract elements from the origional array without modifying it, it takes 2 arguments, the first one is from the index it begins with up to (not including the item at the second arguemnt index).
+- Another way of copying an array is to use `spread (...)` syntax.
+- Using spread operator can help combine arrays or inserting one array to another
+
+```javascript
+let thisArray = ["sage", "rosemary", "parsley", "thyme"];
+
+let thatArray = ["basil", "cilantro", ...thisArray, "coriander"];
+```
+
+- Method `indexOf()` takes one argument as a parameter and return the index of of that parameter in the array, it returns `-1` when the item does not exist on the array.
+- Javascript offer built-in method such as `forEach()`, `every()`, `map` etc to iterate through the items in the array based on data items meet a certain set of criteria but using `for loop` statement give us the most control and flexibility.
+- Array can contain nested arrays which can become complex data structures with different levels of depth, the outer-most array is level one.
+- Key-value pair in Javascript, basicallym they are pieces of data(value) that is mapped to the identifier as keys.
+- Objects can be also nested in another objects just like array in Javascript.
+- Using bracket notation is very useful when we wanna access the property of an object in a dynamic way in case the value of the property is not known before runtime.
+- Use `for...in` statement to loop through the object keys in an object.
+- Use `Object.keys()` that takes an argument as an object and return an array of that object properties.
