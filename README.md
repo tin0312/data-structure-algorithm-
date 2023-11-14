@@ -386,3 +386,50 @@ let thatArray = ["basil", "cilantro", ...thisArray, "coriander"];
 - Using bracket notation is very useful when we wanna access the property of an object in a dynamic way in case the value of the property is not known before runtime.
 - Use `for...in` statement to loop through the object keys in an object.
 - Use `Object.keys()` that takes an argument as an object and return an array of that object properties.
+
+# Day 15 
+
+![day-fifteen-image](./images/dayFifteen.jpg)
+
+Today I have learned: 
+
+- Convert from Celsius to Fa : F = C * 9/5 + 32.
+- Reverse a string by `reverse()` method.
+- Factorize a number using `for...loop`.
+
+```javascript
+function factorialize(num) {
+  if(num === 0 | num ===1){
+    return 1
+  }
+  for(let i = num - 1; i >=1;i--){
+    num*=i
+  }
+  return num;
+}
+```
+- Find a length of the longest word in a sentence
+
+```javascript
+function findLongestWordLength(str) {
+  //look for a longest word
+  let allWords = str.split(' ')
+  // set a milestone to compare as iterating through the array
+  let maxLength = 0
+  for(let i =0; i < allWords.length; i++){
+    if(allWords[i].length > maxLength){
+      maxLength = allWords[i].length
+    }
+  }
+  return maxLength;
+}```
+- `Or`
+
+```javasript
+function findLongestWordLength(s) {
+  return s
+    .split(' ')
+    .reduce((longest, word) => Math.max(longest, word.length), 0);
+}
+```
+
