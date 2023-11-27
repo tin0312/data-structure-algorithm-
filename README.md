@@ -433,3 +433,82 @@ function findLongestWordLength(s) {
 }
 ```
 
+# Day 16
+
+![day-sixteenth-image](./images/daySixteenth.jpg)
+
+Today I have learned:
+
+- Problem 1: return an array of large numbers of for each of the sub-array in the array 
+
+```javascript
+function largestOfFour(arr) {
+  let newArr = []
+  for(let i = 0; i < arr.length; i++){
+      let largeNumber = arr[i][0]
+      for(let j = 1; j < arr[i].length; j++){
+        if(arr[i][j] > largeNumber){
+            largeNumber = arr[i][j]
+        } 
+      }
+    newArr[i] = largeNumber
+  }
+  return newArr;
+}
+```
+
+- Problem 2: Check of the string ends with a given string
+
+```javascript
+function confirmEnding(str, target) {
+  return str.slice(str.length - target.length) === target
+}
+```
+
+- Problem 3: Repeat a string for a number of times
+
+```javascript
+
+function repeatStringNumTimes(str, num) {
+    let newString = ""
+    if(num < 0){
+      return ""
+    }
+    else{
+      for(let i = 0; i < num; i++){
+          newString +=str
+      }
+    }
+    return newString;
+}
+```
+- Problem 4: Return a truncated string if its length exceeds the given number
+
+```javascript
+function truncateString(str, num) {
+  if(str.length > num){
+      return str.slice(0, num) + "..."
+  } else {
+    return str
+  }
+}
+```
+- Problem 5: Return the first element of the array that satisfy the condition of another function.
+
+```javascript
+function findElement(arr, func) {
+    return arr.find(item => func(item) ? item : undefined)
+   
+}
+```
+
+- Problem 6: Check if a value is classified as a boolean primitive 
+
+```javascript
+
+function booWho(bool) {
+    return typeof(bool) === "boolean"
+}
+
+```
+
