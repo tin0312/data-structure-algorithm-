@@ -512,3 +512,82 @@ function booWho(bool) {
 
 ```
 
+# Day 17
+
+![day-seventeenth-image](./images/daySeventeenth.jpg)
+
+Today I have learned:
+
+- Problem 7: Capitialize the first letter of each word in a string
+
+```javascript
+function titleCase(str) {
+  let strArr = str.split(" ")
+  for(let i = 0; i < strArr.length; i++){
+        strArr[i] = strArr[i][0].toUpperCase() + strArr[i].slice(1).toLowerCase()
+        if(strArr[i].toLowerCase() === "the" || strArr[i].toLowerCase() === "of"){
+            strArr[i] = strArr[i].toUpperCase()
+        }
+  }
+  return strArr.join("");
+}
+```
+
+- Problem 8: Insert an array at a specific index of another array
+
+```javascript
+function frankenSplice(arr1, arr2, n) {
+      return arr2.slice(0,n).concat(arr1,arr2.slice(n))
+}
+```
+- Problem 9: Remove all falsy values from the array with mutating the original one
+
+```javascript
+function bouncer(arr) {
+  const newArray = []
+  for(let i = 0; i < arr.length; i++){
+      if(arr[i]){
+          newArray.push(arr[i])
+      }
+  }
+  return newArray;
+}
+```
+- Problem 10: Return the lowest index of an array where a given number is inserted
+
+```javascript
+function getIndexToIns(arr, num) {
+  let sortedArr = arr.sort()
+  let lowestIndex = 0
+  for(let i = 0; i < sortedArr.length; i++){
+      if(sortedArr[i] < num){
+        lowestIndex+= 1
+      }
+  }
+  return lowestIndex
+}
+```
+
+- Problem 11: check if the second element of the array contains all the letters of the first item
+
+```javascript
+function mutation(arr) {
+  const firstElem = arr[0].toLowerCase()
+  const secondElem = arr[1].toLowerCase()
+  for(let i = 0; i < secondElem.length; i++){
+     if (firstElem.indexOf(secondElem[i]) < 0) return false;
+  }
+  return true
+}
+```
+- Problem 10: Split an array to sub-arrays with a size of a given number
+
+```javascript
+function chunkArrayInGroups(arr, size) {
+  let newArray = []
+  for(let i =0; i < arr.length; i+=size){
+      newArray.push(arr.slice(i, i+size))
+  }
+  return newArray;
+}
+```
