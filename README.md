@@ -591,3 +591,77 @@ function chunkArrayInGroups(arr, size) {
   return newArray;
 }
 ```
+# Day 18
+
+![day-eighteenth-image](./images/dayeighteenth.jpg)
+
+Today I have learned:
+
+*Object Oriented Programming*
+
+- Object in Javascript used to model the real-world objects.
+- Create an object in Javascript.
+- If a variable name of an object varies, then references to that name needs to be updated as well, however, using `this` keyword to access the object properties makes the object reusable without the need of updating the references.  
+- Constructors behave like the blueprint which are used to create an object.
+- Constructors conventions:
+  1.Capitalized name.
+  2.Using `this` keyword to create properties of an object.
+- Example: 
+
+```javascript
+function Bird() {
+  this.name = "Albert";
+  this.color = "blue";
+  this.numLegs = 2;
+}
+// make another instance of Bird object with new operator
+const secondBird = new Bird()
+```
+
+- Passing argument for the constructor for it to be reusable
+
+```javascript
+function Bird(name, color) {
+  this.name = name; // own properties
+  this.color = color;
+}
+
+Bird.prototype.numLegs = 4; // prototype properties.
+
+const secondBird = new Bird("Pui", "gray")
+
+secondBird instanceof Bird
+
+
+```
+
+- Use `instanceof` operator to verify of an object is an instance of a constructor
+- Use `prototype` so that the properies are shared among all instances.
+- The properties in the object that are created with the constructor are called `own properties` and the other type is called `prototype`.
+- The use  `constructor` property for helping verify the object of the  constructor function object. `constructor` refers to the constructor function that creates the object.
+-  `prototype` can be written in form of object 
+
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  constructor: Dog, // manually define the constructor
+  numLegs: 4,
+  eat: function(){},
+  describe: function(){}
+};
+
+const Bull = new Dog()
+```
+- An object that inherits the prototype of the constructor that created it and proved by `Dog.prototype.isPrototypeof(Bull)`
+- Every object in Javascript has `prototype`, a  `prototype` itself is an object and its prototype is `Object.prototype` which is the supertype of all objects.
+- The principle in programming is called `DRY` which is to not repeat yourself, so that there will be less errors and less work for programmers by using techunique `inheritance`
+- There is an alternative approach to `new` operator to create an instance for an constructor object which is `Object.create(obj)`, by replacing `obj` by the constructor object prototype, the new object inherits the protype of the constructor object.
+- Make substype to inherit from the supertype object : 
+
+```javascript
+Dog.prototype = Object.create(Animal.prototype) // Animal is the supertype that has a method that is shared with the Dog instance now.
+```
+- Keep in mind to manually modify the constructor of the object prototype inheritance constructor  `Dog.prototype.constructor = Dog` not animal.
