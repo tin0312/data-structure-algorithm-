@@ -387,30 +387,31 @@ let thatArray = ["basil", "cilantro", ...thisArray, "coriander"];
 - Use `for...in` statement to loop through the object keys in an object.
 - Use `Object.keys()` that takes an argument as an object and return an array of that object properties.
 
-# Day 15 
+# Day 15
 
 ![day-fifteen-image](./images/dayFifteen.jpg)
 
-Today I have learned: 
+Today I have learned:
 
-- Convert from Celsius to Fa : F = C * 9/5 + 32.
+- Convert from Celsius to Fa : F = C \* 9/5 + 32.
 - Reverse a string by `reverse()` method.
 - Factorize a number using `for...loop`.
 
 ```javascript
 function factorialize(num) {
-  if(num === 0 | num ===1){
-    return 1
+  if ((num === 0) | (num === 1)) {
+    return 1;
   }
-  for(let i = num - 1; i >=1;i--){
-    num*=i
+  for (let i = num - 1; i >= 1; i--) {
+    num *= i;
   }
   return num;
 }
 ```
+
 - Find a length of the longest word in a sentence
 
-```javascript
+````javascript
 function findLongestWordLength(str) {
   //look for a longest word
   let allWords = str.split(' ')
@@ -431,7 +432,7 @@ function findLongestWordLength(s) {
     .split(' ')
     .reduce((longest, word) => Math.max(longest, word.length), 0);
 }
-```
+````
 
 # Day 16
 
@@ -439,19 +440,19 @@ function findLongestWordLength(s) {
 
 Today I have learned:
 
-- Problem 1: return an array of large numbers of for each of the sub-array in the array 
+- Problem 1: return an array of large numbers of for each of the sub-array in the array
 
 ```javascript
 function largestOfFour(arr) {
-  let newArr = []
-  for(let i = 0; i < arr.length; i++){
-      let largeNumber = arr[i][0]
-      for(let j = 1; j < arr[i].length; j++){
-        if(arr[i][j] > largeNumber){
-            largeNumber = arr[i][j]
-        } 
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let largeNumber = arr[i][0];
+    for (let j = 1; j < arr[i].length; j++) {
+      if (arr[i][j] > largeNumber) {
+        largeNumber = arr[i][j];
       }
-    newArr[i] = largeNumber
+    }
+    newArr[i] = largeNumber;
   }
   return newArr;
 }
@@ -461,55 +462,52 @@ function largestOfFour(arr) {
 
 ```javascript
 function confirmEnding(str, target) {
-  return str.slice(str.length - target.length) === target
+  return str.slice(str.length - target.length) === target;
 }
 ```
 
 - Problem 3: Repeat a string for a number of times
 
 ```javascript
-
 function repeatStringNumTimes(str, num) {
-    let newString = ""
-    if(num < 0){
-      return ""
+  let newString = "";
+  if (num < 0) {
+    return "";
+  } else {
+    for (let i = 0; i < num; i++) {
+      newString += str;
     }
-    else{
-      for(let i = 0; i < num; i++){
-          newString +=str
-      }
-    }
-    return newString;
+  }
+  return newString;
 }
 ```
+
 - Problem 4: Return a truncated string if its length exceeds the given number
 
 ```javascript
 function truncateString(str, num) {
-  if(str.length > num){
-      return str.slice(0, num) + "..."
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
   } else {
-    return str
+    return str;
   }
 }
 ```
+
 - Problem 5: Return the first element of the array that satisfy the condition of another function.
 
 ```javascript
 function findElement(arr, func) {
-    return arr.find(item => func(item) ? item : undefined)
-   
+  return arr.find((item) => (func(item) ? item : undefined));
 }
 ```
 
-- Problem 6: Check if a value is classified as a boolean primitive 
+- Problem 6: Check if a value is classified as a boolean primitive
 
 ```javascript
-
 function booWho(bool) {
-    return typeof(bool) === "boolean"
+  return typeof bool === "boolean";
 }
-
 ```
 
 # Day 17
@@ -522,12 +520,12 @@ Today I have learned:
 
 ```javascript
 function titleCase(str) {
-  let strArr = str.split(" ")
-  for(let i = 0; i < strArr.length; i++){
-        strArr[i] = strArr[i][0].toUpperCase() + strArr[i].slice(1).toLowerCase()
-        if(strArr[i].toLowerCase() === "the" || strArr[i].toLowerCase() === "of"){
-            strArr[i] = strArr[i].toUpperCase()
-        }
+  let strArr = str.split(" ");
+  for (let i = 0; i < strArr.length; i++) {
+    strArr[i] = strArr[i][0].toUpperCase() + strArr[i].slice(1).toLowerCase();
+    if (strArr[i].toLowerCase() === "the" || strArr[i].toLowerCase() === "of") {
+      strArr[i] = strArr[i].toUpperCase();
+    }
   }
   return strArr.join("");
 }
@@ -537,34 +535,36 @@ function titleCase(str) {
 
 ```javascript
 function frankenSplice(arr1, arr2, n) {
-      return arr2.slice(0,n).concat(arr1,arr2.slice(n))
+  return arr2.slice(0, n).concat(arr1, arr2.slice(n));
 }
 ```
+
 - Problem 9: Remove all falsy values from the array with mutating the original one
 
 ```javascript
 function bouncer(arr) {
-  const newArray = []
-  for(let i = 0; i < arr.length; i++){
-      if(arr[i]){
-          newArray.push(arr[i])
-      }
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      newArray.push(arr[i]);
+    }
   }
   return newArray;
 }
 ```
+
 - Problem 10: Return the lowest index of an array where a given number is inserted
 
 ```javascript
 function getIndexToIns(arr, num) {
-  let sortedArr = arr.sort()
-  let lowestIndex = 0
-  for(let i = 0; i < sortedArr.length; i++){
-      if(sortedArr[i] < num){
-        lowestIndex+= 1
-      }
+  let sortedArr = arr.sort();
+  let lowestIndex = 0;
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] < num) {
+      lowestIndex += 1;
+    }
   }
-  return lowestIndex
+  return lowestIndex;
 }
 ```
 
@@ -572,41 +572,43 @@ function getIndexToIns(arr, num) {
 
 ```javascript
 function mutation(arr) {
-  const firstElem = arr[0].toLowerCase()
-  const secondElem = arr[1].toLowerCase()
-  for(let i = 0; i < secondElem.length; i++){
-     if (firstElem.indexOf(secondElem[i]) < 0) return false;
+  const firstElem = arr[0].toLowerCase();
+  const secondElem = arr[1].toLowerCase();
+  for (let i = 0; i < secondElem.length; i++) {
+    if (firstElem.indexOf(secondElem[i]) < 0) return false;
   }
-  return true
+  return true;
 }
 ```
+
 - Problem 10: Split an array to sub-arrays with a size of a given number
 
 ```javascript
 function chunkArrayInGroups(arr, size) {
-  let newArray = []
-  for(let i =0; i < arr.length; i+=size){
-      newArray.push(arr.slice(i, i+size))
+  let newArray = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArray.push(arr.slice(i, i + size));
   }
   return newArray;
 }
 ```
+
 # Day 18
 
 ![day-eighteenth-image](./images/dayeighteenth.jpg)
 
 Today I have learned:
 
-*Object Oriented Programming*
+_Object Oriented Programming_
 
 - Object in Javascript used to model the real-world objects.
 - Create an object in Javascript.
-- If a variable name of an object varies, then references to that name needs to be updated as well, however, using `this` keyword to access the object properties makes the object reusable without the need of updating the references.  
+- If a variable name of an object varies, then references to that name needs to be updated as well, however, using `this` keyword to access the object properties makes the object reusable without the need of updating the references.
 - Constructors behave like the blueprint which are used to create an object.
 - Constructors conventions:
   1.Capitalized name.
   2.Using `this` keyword to create properties of an object.
-- Example: 
+- Example:
 
 ```javascript
 function Bird() {
@@ -615,7 +617,7 @@ function Bird() {
   this.numLegs = 2;
 }
 // make another instance of Bird object with new operator
-const secondBird = new Bird()
+const secondBird = new Bird();
 ```
 
 - Passing argument for the constructor for it to be reusable
@@ -628,18 +630,16 @@ function Bird(name, color) {
 
 Bird.prototype.numLegs = 4; // prototype properties.
 
-const secondBird = new Bird("Pui", "gray")
+const secondBird = new Bird("Pui", "gray");
 
-secondBird instanceof Bird
-
-
+secondBird instanceof Bird;
 ```
 
 - Use `instanceof` operator to verify of an object is an instance of a constructor
 - Use `prototype` so that the properies are shared among all instances.
 - The properties in the object that are created with the constructor are called `own properties` and the other type is called `prototype`.
-- The use  `constructor` property for helping verify the object of the  constructor function object. `constructor` refers to the constructor function that creates the object.
--  `prototype` can be written in form of object 
+- The use `constructor` property for helping verify the object of the constructor function object. `constructor` refers to the constructor function that creates the object.
+- `prototype` can be written in form of object
 
 ```javascript
 function Dog(name) {
@@ -649,19 +649,107 @@ function Dog(name) {
 Dog.prototype = {
   constructor: Dog, // manually define the constructor
   numLegs: 4,
-  eat: function(){},
-  describe: function(){}
+  eat: function () {},
+  describe: function () {},
 };
 
-const Bull = new Dog()
+const Bull = new Dog();
 ```
+
 - An object that inherits the prototype of the constructor that created it and proved by `Dog.prototype.isPrototypeof(Bull)`
-- Every object in Javascript has `prototype`, a  `prototype` itself is an object and its prototype is `Object.prototype` which is the supertype of all objects.
+- Every object in Javascript has `prototype`, a `prototype` itself is an object and its prototype is `Object.prototype` which is the supertype of all objects.
 - The principle in programming is called `DRY` which is to not repeat yourself, so that there will be less errors and less work for programmers by using techunique `inheritance`
 - There is an alternative approach to `new` operator to create an instance for an constructor object which is `Object.create(obj)`, by replacing `obj` by the constructor object prototype, the new object inherits the protype of the constructor object.
-- Make substype to inherit from the supertype object : 
+- Make substype to inherit from the supertype object :
 
 ```javascript
-Dog.prototype = Object.create(Animal.prototype) // Animal is the supertype that has a method that is shared with the Dog instance now.
+Dog.prototype = Object.create(Animal.prototype); // Animal is the supertype that has a method that is shared with the Dog instance now.
 ```
-- Keep in mind to manually modify the constructor of the object prototype inheritance constructor  `Dog.prototype.constructor = Dog` not animal.
+
+- Keep in mind to manually modify the constructor of the object prototype inheritance constructor `Dog.prototype.constructor = Dog` not animal.
+
+# Day 19
+
+![day-nineteenth-image](./images/dayNineteenth.jpg)
+
+Today I have learned:
+
+- Besides of getting the object prototype inheritance from a supertype, the object constructor can have its own unique methods.
+- The formula for children to inherit methods from its parents object:
+
+```javascript
+ChildObject.prototype = Object.create(ParentObject.prototype);
+```
+
+- When inherits from the supertype, using `child.prototype.method` to assign it with anoher value to override the inheritance value.
+- Using `mixins` to share methods between unrelated objects instead of inheritance, the conventtion name is camel case for `mixins`.
+
+```javascript
+let bird = {
+  name: "Donald",
+  numLegs: 2,
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat",
+};
+
+let glideMixin = function (obj) {
+  obj.glide = function () {
+    console.log("sharing using mixins");
+  };
+};
+glideMixin(bird);
+glideMixin(boat);
+```
+
+- In Javascript, a function always has access to the context in which it was created.
+- A private property in an object can only access by its contructor object method, not any part of the codebase.
+
+```javascript
+function Bird() {
+  let weight = 15; // weight is a private variable that can only be accessed with getWeight method.
+  this.getWeight = function () {
+    return weight;
+  };
+}
+```
+
+- The function with no name and wrapped by a pair of `()` and an empty `()` with no arguments is the immediately invoked function express
+
+```javascript
+(function () {
+  console.log("A cozy nest is ready");
+})();
+```
+
+- The immediately invoke function express can be used to create a module that can be accessed anywhere in the code base by combining all the mixins as properties of an object of the IIFE return statement.
+
+```javascript
+let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+};
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+};
+
+let funModule = (function(){
+  return {
+    isCuteMixin: function(obj){
+      obj.isCute = function(){
+        return true
+      }
+    },
+    singMixin: function(obj){
+        obj.sing = function(){
+            console.log("Sing to an awesome tune")
+        }
+    }
+  }
+})()
+```
