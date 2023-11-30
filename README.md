@@ -753,3 +753,47 @@ let funModule = (function(){
   }
 })()
 ```
+
+# Day 20
+
+![day-tweetith-image](./images/dayTweentith.jpg)
+
+*Functional Programming*
+
+Today I have learned:
+
+- Functional programming is the programming style that is independent, same input results the same output and functions regardless of any other factors which are called: `Isolated function` - `Pure function ` which does not cause the side effect for the outcome.
+- `callbacks` functions are the ones that are passed into or slipped into to decide the invocation of a function and alse called `lambda` and are called first class functions.
+- Functions that takes other functions as parameters are called `higher order` functions.
+- Be cautious when using `splice()` since the method modifies the array.
+- The core principle in functional programming is the function does not change things for better bug prevention.It should not mutate the original variables.
+- The other principle is that of the function depends on an object or a variable present then pass that in as the function argument so that the function is easier to test and will not depend on anything in your program.
+- Example of  functional programming: Dont alter a variable or an object, intead copy it and so something with it.
+```javascript
+// The global variable
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+// Change code below this line
+function add(arr,bookName) {
+  let newArray = [...arr]
+  newArray.push(bookName);
+  return newArray;
+  
+  // Change code above this line
+}
+
+// Change code below this line
+function remove(arr,bookName) {
+  let newArray = [...arr]
+  const book_index = newArray.indexOf(bookName);
+  if (book_index >= 0) {
+
+    newArray.splice(book_index, 1);
+    return newArray;
+
+    // Change code above this line
+    }
+}
+```
+- The use of `array.prototype.map` objec or simple `map(item, index, originalArray)` that iterate through the array without mutating the original array.This is considered a `pure` function.
+- The use of `forEach()` and  `for loop` are also recommended as alternatives as `map()`
