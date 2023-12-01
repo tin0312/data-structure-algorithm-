@@ -797,3 +797,22 @@ function remove(arr,bookName) {
 ```
 - The use of `array.prototype.map` objec or simple `map(item, index, originalArray)` that iterate through the array without mutating the original array.This is considered a `pure` function.
 - The use of `forEach()` and  `for loop` are also recommended as alternatives as `map()`
+
+# Day 21
+![day-tweentyfirst](./images/dayTweentyfirst.jpg)
+
+Today I have learned: 
+
+- The use of `Array.prototype.filter` that filter the elements in the array based on the callback functions, it does not mutate the 
+- The combonation of using `filter()` and `map()` together to sort an array of objects.  
+- Using `for loop` statement and `forEach()` are recommended methods instead of `filter()`.
+- The `slice()` method is used to make a copy of an array without mutating it.
+- Concatenation means to join which works well with a string or an array with `concat()` method.Concatenation is one way of functional programming which does not mutate the original array but to merge them together and return a new array. 
+- The use of `reduce()` is general for all javascript array operations which can potentially cover `map()` and `filter()`.
+- `parseInt()` and `parseFloat()`
+- Javascript bult-in `sort()` method applied on Unicode value points can sometimes output unexpectedly, therefore, a callback function is included to prevent this issue.
+- The `split()` methods works on string since its immutable.One thing to remember when splitting is to `trim()` the whitespace of the string and split with one or more white space using `/\S+/` regrex for expected behaviour.
+- The `join()` method is used to join the array together to make a string.
+- The `every()` method is used to determine if every item of the array passed a particular test of its callback function.
+- The  `some()` method is used to determine if any item in the array passed a particular test of its callback function. 
+- Term `arity` of a function means number of arguments in a function and `currying function` means to restructor the function to take the  `arity` of 1 and return another function inside it and so on.
