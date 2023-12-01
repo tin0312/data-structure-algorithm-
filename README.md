@@ -727,38 +727,38 @@ function Bird() {
 - The immediately invoke function express can be used to create a module that can be accessed anywhere in the code base by combining all the mixins as properties of an object of the IIFE return statement.
 
 ```javascript
-let isCuteMixin = function(obj) {
-  obj.isCute = function() {
+let isCuteMixin = function (obj) {
+  obj.isCute = function () {
     return true;
   };
 };
-let singMixin = function(obj) {
-  obj.sing = function() {
+let singMixin = function (obj) {
+  obj.sing = function () {
     console.log("Singing to an awesome tune");
   };
 };
 
-let funModule = (function(){
+let funModule = (function () {
   return {
-    isCuteMixin: function(obj){
-      obj.isCute = function(){
-        return true
-      }
+    isCuteMixin: function (obj) {
+      obj.isCute = function () {
+        return true;
+      };
     },
-    singMixin: function(obj){
-        obj.sing = function(){
-            console.log("Sing to an awesome tune")
-        }
-    }
-  }
-})()
+    singMixin: function (obj) {
+      obj.sing = function () {
+        console.log("Sing to an awesome tune");
+      };
+    },
+  };
+})();
 ```
 
 # Day 20
 
 ![day-tweetith-image](./images/dayTweentith.jpg)
 
-*Functional Programming*
+_Functional Programming_
 
 Today I have learned:
 
@@ -768,51 +768,97 @@ Today I have learned:
 - Be cautious when using `splice()` since the method modifies the array.
 - The core principle in functional programming is the function does not change things for better bug prevention.It should not mutate the original variables.
 - The other principle is that of the function depends on an object or a variable present then pass that in as the function argument so that the function is easier to test and will not depend on anything in your program.
-- Example of  functional programming: Dont alter a variable or an object, intead copy it and so something with it.
+- Example of functional programming: Dont alter a variable or an object, intead copy it and so something with it.
+
 ```javascript
 // The global variable
-const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+const bookList = [
+  "The Hound of the Baskervilles",
+  "On The Electrodynamics of Moving Bodies",
+  "Philosophiæ Naturalis Principia Mathematica",
+  "Disquisitiones Arithmeticae",
+];
 
 // Change code below this line
-function add(arr,bookName) {
-  let newArray = [...arr]
+function add(arr, bookName) {
+  let newArray = [...arr];
   newArray.push(bookName);
   return newArray;
-  
+
   // Change code above this line
 }
 
 // Change code below this line
-function remove(arr,bookName) {
-  let newArray = [...arr]
+function remove(arr, bookName) {
+  let newArray = [...arr];
   const book_index = newArray.indexOf(bookName);
   if (book_index >= 0) {
-
     newArray.splice(book_index, 1);
     return newArray;
 
     // Change code above this line
-    }
+  }
 }
 ```
+
 - The use of `array.prototype.map` objec or simple `map(item, index, originalArray)` that iterate through the array without mutating the original array.This is considered a `pure` function.
-- The use of `forEach()` and  `for loop` are also recommended as alternatives as `map()`
+- The use of `forEach()` and `for loop` are also recommended as alternatives as `map()`
 
 # Day 21
+
 ![day-tweentyfirst](./images/dayTweentyfirst.jpg)
 
-Today I have learned: 
+Today I have learned:
 
-- The use of `Array.prototype.filter` that filter the elements in the array based on the callback functions, it does not mutate the 
-- The combonation of using `filter()` and `map()` together to sort an array of objects.  
+- The use of `Array.prototype.filter` that filter the elements in the array based on the callback functions, it does not mutate the
+- The combonation of using `filter()` and `map()` together to sort an array of objects.
 - Using `for loop` statement and `forEach()` are recommended methods instead of `filter()`.
 - The `slice()` method is used to make a copy of an array without mutating it.
-- Concatenation means to join which works well with a string or an array with `concat()` method.Concatenation is one way of functional programming which does not mutate the original array but to merge them together and return a new array. 
+- Concatenation means to join which works well with a string or an array with `concat()` method.Concatenation is one way of functional programming which does not mutate the original array but to merge them together and return a new array.
 - The use of `reduce()` is general for all javascript array operations which can potentially cover `map()` and `filter()`.
 - `parseInt()` and `parseFloat()`
 - Javascript bult-in `sort()` method applied on Unicode value points can sometimes output unexpectedly, therefore, a callback function is included to prevent this issue.
 - The `split()` methods works on string since its immutable.One thing to remember when splitting is to `trim()` the whitespace of the string and split with one or more white space using `/\S+/` regrex for expected behaviour.
 - The `join()` method is used to join the array together to make a string.
 - The `every()` method is used to determine if every item of the array passed a particular test of its callback function.
-- The  `some()` method is used to determine if any item in the array passed a particular test of its callback function. 
-- Term `arity` of a function means number of arguments in a function and `currying function` means to restructor the function to take the  `arity` of 1 and return another function inside it and so on.
+- The `some()` method is used to determine if any item in the array passed a particular test of its callback function.
+- Term `arity` of a function means number of arguments in a function and `currying function` means to restructor the function to take the `arity` of 1 and return another function inside it and so on.
+
+# Day 22
+
+![day-twentyseond](./images/dayTwentysecond.jpg)
+
+Today I have learned:
+
+- Using `for loop` statement and `sort()` combination to calculate the sum between 2 given numbers in an array, the smallest number never comes first.
+- `Arithmetic progression summing` formula: ((startNum + endNum) \* numCount) / 2.
+- Return the symmetric difference of 2 arrays.
+- Index of `-1` means the item does not exist in the array.
+- To call another function within a function whose function takes parameters as arguments as placeholder for the outer function.
+- Review `rest` parameter allows function to take unlimited arguments and put them in an array.
+- The `object.value()` return an array of that object values and the `argument` object that contain all argument for the object in the form of array-like object.
+- Comparing a key-value pair with an object to find a match using `for loop` and `if` statement.
+- Regrex `/\s|_|(?=[A-Z])/` to encounter whitespace, underscore, and followed by the uppercase letters.
+- The use of `charAt()` to interact with indexes in a string.
+- One thing to note when searching and replacing an item in an array is that it is a good tip to find the to-be-replace item index and then manipulate it if there is such conditions before replace it with another value.
+- One thing to note when returning a 2-D array from a given string, remember to return the accumulated array for each iteration to make sure the array is updated to contains sub-arrays.
+
+```javascript
+function pairElement(str) {
+  const basePairs = {
+    A: "T",
+    T: "A",
+    C: "G",
+    G: "C",
+  };
+  let twoDArr = str.split("").reduce((array, block) => {
+    if (basePairs.hasOwnProperty(block)) {
+      array.push([block, basePairs[block]]);
+      return array;
+    }
+  }, []);
+  return twoDArr;
+}
+
+console.log(pairElement("GCG"));
+```
